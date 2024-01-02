@@ -1,0 +1,6 @@
+[submodule "lib/psg9080"]
+	path = lib/psg9080
+	url = https://github.com/poehldaniel/PSG9080
+[submodule "lib/ds1054z"]
+	path = lib/ds1054z
+	url = https://github.com/pklaus/ds1054z

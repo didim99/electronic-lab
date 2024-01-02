@@ -9,16 +9,19 @@ from PIL import Image
 from psg9080 import PSG9080
 from ds1054z import DS1054Z
 
+DDS_PORT = '/dev/ttyUSB0'
+SCOPE_ADDR = 'rigol.home.loc'
+DATA_DIR = 'data'
 
 def start():
     wd = Path(os.getcwd())
     now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    data_path = wd / "data" / now
+    data_path = wd / DATA_DIR / now
     data_path.mkdir(parents=True)
 
-    dds = PSG9080('/dev/ttyUSB0')
+    dds = PSG9080(DDS_PORT)
+    scope = DS1054Z(SCOPE_ADDR)
     dds.connect()
-    scope = DS1054Z('rigol.home.loc')
     scope.open()
     time.sleep(3)
 

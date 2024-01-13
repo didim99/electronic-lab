@@ -13,6 +13,7 @@ DDS_PORT = '/dev/ttyUSB0'
 SCOPE_ADDR = 'rigol.home.loc'
 DATA_DIR = 'data'
 
+
 def start():
     wd = Path(os.getcwd())
     now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -40,6 +41,7 @@ def start():
 
     dds.disconnect()
     scope.close()
+
 
 if __name__ == '__main__':
     start()
